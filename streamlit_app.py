@@ -4,7 +4,6 @@ from snowflake.snowpark.functions import col
 import requests
 
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-st.text(fruityvice_response)
 
 # Write directly to the app
 st.title("My Parents New Healthy Diner")
@@ -30,6 +29,7 @@ ingredients_list = st.multiselect(
     ,my_dataframe
     ,max_selections=5
 )
+st.text(fruityvice_response.json())
 
 if ingredients_list:
     ingredients_string =''
